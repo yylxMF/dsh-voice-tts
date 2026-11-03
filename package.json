@@ -1,0 +1,44 @@
+{
+  "name": "dsh-voice-tts",
+  "version": "0.1.9",
+  "description": "给 DSH 装一张嘴：把助手回复念出来。浏览器 Web Speech 优先、Windows SAPI 兜底，带消息栏喇叭按钮、选字阅读与设置页。",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "tts",
+    "text-to-speech",
+    "speech",
+    "voice"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node test/client.test.mjs && node test/dom.test.mjs && node test/host.test.mjs"
+  },
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": { "inject": [], "platform": "web" }
+  },
+  "license": "MIT",
+  "author": "YYLXMF",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yylxMF/dsh-voice-tts.git"
+  },
+  "homepage": "https://github.com/yylxMF/dsh-voice-tts#readme",
+  "bugs": {
+    "url": "https://github.com/yylxMF/dsh-voice-tts/issues"
+  }
+}
